@@ -1,43 +1,90 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
-</html>
+<div>
+  <meta charSet="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mesto</title>
+  <link rel="stylesheet" href="./src/index.css" />
+  <div className="page">
+    <header className="header">
+      <img src="./images/logo.svg" alt="Лого" className="header__logo" />
+    </header>
+    <main className="main">
+      <section className="profile">
+        <div className="profile__avatar">
+          <img alt="Автор" className="profile__avatar-img" />
+          <button className="profile__pencil-edit" />
+        </div>
+        <div className="profile__description">
+          <div className="profile__name">
+            <h1 className="profile__author" />
+            <p className="profile__about" />
+          </div>
+          <button className="profile__button-edit" type="button" />
+        </div>
+        <button className="profile__button-add" type="button" />
+      </section>
+      <section className="cards"></section>
+    </main>
+    <footer className="footer">
+      <p className="footer__author">© 2020 Цырульников Даниил</p>
+    </footer>
+    <section className="popup">
+      <form className="popup__container" noValidate>
+        <button className="popup__close" type="button" />
+        <h2 className="popup__title">Редактировать профиль</h2>
+        <input name="name" className=" popup__input popup__input_author " id="author-input" type="text"
+          pattern="[A-Za-zА-ЯЁа-яё -]{1,}" minLength={2} maxLength={40} placeholder="Имя" required />
+        <span className="popup__span-error " id="author-input-error" />
+        <input name="about" className="popup__input popup__input_about " id="about-input" type="text" minLength={2}
+          maxLength={200} placeholder="О себе" required />
+        <span className="popup__span-error " id="about-input-error" />
+        <button className="popup__save popup__button-loading" type="submit">
+          Сохранить
+        </button>
+      </form>
+    </section>
+    <section className="popup popup-add ">
+      <form className="popup__container popup-add__case" noValidate>
+        <button className="popup__close" type="button" />
+        <h2 className="popup__title ">Новое место</h2>
+        <input name="name" className="popup__input popup__input_name " id="name-input" type="text"
+          placeholder="Название" minLength={1} maxLength={30} required />
+        <span className="popup__span-error " id="name-input-error" />
+        <input name="link" className="popup__input popup__input_link " id="link-input" type="url"
+          placeholder="Ссылка на картинку" required />
+        <span className="popup__span-error " id="link-input-error" />
+        <button className="popup__save popup__button-add popup__button-loading" type="submit">
+          Создать
+        </button>
+      </form>
+    </section>
+    <section className="popup popup-picture">
+      <form className="popup-picture__case">
+        <button className="popup__close" type="button" />
+        <img alt className="popup-picture__image" />
+        <p className="popup-picture__title" />
+      </form>
+    </section>
+    <section className="popup popup__avatar">
+      <form className="popup__avatar-case popup__container ">
+        <button className="popup__close" type="button" />
+        <h2 className="popup__title">Обновить аватар</h2>
+        <input name="avatar" className="popup__input popup__input_name" type="url" placeholder="Ссылка на картинку"
+          required />
+        <span className="popup__span-error" />
+        <button className="popup__save popup__button-loading" type="submit">
+          Сохранить
+        </button>
+      </form>
+    </section>
+    <section className="popup popup__sure">
+      <form className="popup__container popup__sure-case">
+        <button className="popup__close" type="button" />
+        <h2 className="popup__title">Вы уверены?</h2>
+        <button className="popup__save popup__button-loading" type="submit">
+          Да
+        </button>
+      </form>
+    </section>
+  </div>
+  <template id="template" />
+</div>;
