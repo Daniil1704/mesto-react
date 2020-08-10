@@ -32,7 +32,7 @@ import {
   popupSure,
   popupAvatar,
   buttonAvatar
-} from '../utils/utils.js';
+} from './utils/utils.js';
 
 import { Userinfo } from '../components/UserInfo.js';
 
