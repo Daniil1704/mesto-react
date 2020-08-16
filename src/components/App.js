@@ -58,7 +58,7 @@ function App() {
 
       <Footer />
 
-      <section className="popup">
+      <section className="popups">
         <PopupWithForm
           name='profile'
           title='Редактировать профиль'
@@ -66,12 +66,14 @@ function App() {
           isOpen={isEditProfilePopupOpen}
           onClose={closeAllPopups}
         >
-          <fieldset className="popup">
-            <input name="name" className="popup__input popup__input_name" id="name-input" type="text" defaultValue="" required minLength={2} maxLength={40} pattern="[A-Za-zА-ЯЁа-яё -]{1,}" placeholder="Ваше имя" />
-            <span className="popup__span-error" id="name-input-error"></span>
-            <input name="link" className="popup__input popup__input_text" id="link-input" type="text" defaultValue="" required minLength={2} maxLength={40} placeholder="О себе" />
-            <span className="popup__span-error" id="text-input-error"></span>
-          </fieldset>
+        
+            <input name="name" class="popup__input popup__input_author " id="author-input" type="text"
+              pattern="[A-Za-zА-ЯЁа-яё -]{1,}" minlength="2" maxlength="40" placeholder="Имя" required />
+            <span className="popup__span-error" ></span>
+            <input name="about" class="popup__input popup__input_about " id="about-input" type="text" minlength="2"
+              maxlength="200" placeholder="О себе" required />
+            <span className="popup__span-error" ></span>
+          
         </PopupWithForm>
 
         <PopupWithForm
@@ -81,12 +83,14 @@ function App() {
           isOpen={isAddPlacePopupOpen}
           onClose={closeAllPopups}
         >
-          <fieldset className="popup">
-            <input name="name" className="popup__input popup__input_title" id="title-input" type="text" placeholder="Название" defaultValue="" required minLength={1} maxLength={30} />
-            <span className="popup__span-error" id="title-input-error"></span>
-            <input name="link" className="popup__input popup__input_link" id="link-input" type="url" placeholder="Ссылка на картинку" defaultValue="" required />
-            <span className="popup__span-error" id="link-input-error"></span>
-          </fieldset>
+          
+            <input name="name" class="popup__input popup__input_name " id="name-input" type="text" placeholder="Название"
+              minlength="1" maxlength="30" required />
+            <span className="popup__span-error" ></span>
+            <input name="link" class="popup__input popup__input_link " id="link-input" type="url"
+              placeholder="Ссылка на картинку" required />
+            <span className="popup__span-error" ></span>
+        
         </PopupWithForm>
 
         <PopupWithForm
@@ -96,10 +100,10 @@ function App() {
           isOpen={isEditAvatarPopupOpen}
           onClose={closeAllPopups}
         >
-          <fieldset className="popup">
-            <input name="avatar" className="popup__input popup__input_name" id="" type="url" placeholder="Ссылка на картинку" defaultValue="" required />
-            <span className="popup__span-error" id="avatar-link-error"></span>
-          </fieldset>
+          
+            <input name="avatar" className="popup__input popup__input_name" type="url" placeholder="Ссылка на картинку" defaultValue="" required />
+            <span className="popup__span-error"></span>
+          
         </PopupWithForm>
 
         <ImagePopup
