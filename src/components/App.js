@@ -4,7 +4,6 @@ import Main from './Main.js';
 import Footer from './Footer.js'
 import PopupWithForm from './PopupWithForm.js';
 import ImagePopup from './ImagePopup.js';
-import '../index.css';
 
 function App() {
 
@@ -67,11 +66,11 @@ function App() {
           onClose={closeAllPopups}
         >
         
-            <input name="name" class="popup__input popup__input_author " id="author-input" type="text"
-              pattern="[A-Za-zА-ЯЁа-яё -]{1,}" minlength="2" maxlength="40" placeholder="Имя" required />
+            <input name="name" className="popup__input popup__input_author " id="author-input" type="text"
+              pattern="[A-Za-zА-ЯЁа-яё -]{1,}" minLength="2" maxLength="40" placeholder="Имя" required />
             <span className="popup__span-error" ></span>
-            <input name="about" class="popup__input popup__input_about " id="about-input" type="text" minlength="2"
-              maxlength="200" placeholder="О себе" required />
+            <input name="about" className="popup__input popup__input_about " id="about-input" type="text" minLength="2"
+              maxLength="200" placeholder="О себе" required />
             <span className="popup__span-error" ></span>
           
         </PopupWithForm>
@@ -84,10 +83,10 @@ function App() {
           onClose={closeAllPopups}
         >
           
-            <input name="name" class="popup__input popup__input_name " id="name-input" type="text" placeholder="Название"
-              minlength="1" maxlength="30" required />
+            <input name="name" className="popup__input popup__input_name " id="name-input" type="text" placeholder="Название"
+              minLength="1" maxLength="30" required />
             <span className="popup__span-error" ></span>
-            <input name="link" class="popup__input popup__input_link " id="link-input" type="url"
+            <input name="link" className="popup__input popup__input_link " id="link-input" type="url"
               placeholder="Ссылка на картинку" required />
             <span className="popup__span-error" ></span>
         

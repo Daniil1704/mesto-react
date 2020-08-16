@@ -6,5 +6,7 @@
 @import url(../card/__like/card__like.css);
 @import url(../card/__span-like/card__span-like.css);
 .card {
+    display: flex;
+    flex-direction: column;
     position: relative;
 }
