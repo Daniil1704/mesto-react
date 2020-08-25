@@ -62,19 +62,14 @@ export class Api {
         })
     }
 
-    addLike(id) {
+    addLike(id, status) {
         return this._sendRequest(`/cards/likes/${id}`, {
-            method: 'PUT',
+            method: `${(status) ? `PUT` : `DELETE`}`,
             headers: this.headers
         })
     }
 
-    deleteLike(id) {
-        return this._sendRequest(`/cards/likes/${id}`, {
-            method: 'DELETE',
-            headers: this.headers
-        })
-    }
+   
 
     deleteCard(id) {
         return this._sendRequest(`/cards/${id}`, {
