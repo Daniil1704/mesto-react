@@ -1,3 +1,4 @@
+@import url(./_active/card__rubbish_active.css);
 .card__rubbish {
     border: none;
     background-color: transparent;
@@ -7,6 +8,7 @@
     position: absolute;
     top: 18px;
     right: 15px;
+    display: none;
   }
   .card__rubbish:hover {
     cursor: pointer;

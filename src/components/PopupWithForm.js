@@ -6,14 +6,16 @@ function PopupWithForm(props) {
         buttonText,
         isOpen,
         onClose,
+        onSubmit,
+        isLoading
     } = props;
     return (
         <div className={`popup  ${isOpen && 'popup_opened'}`}>
-            <form className={`popup__container `}>
+            <form onSubmit={onSubmit} className={`popup__container `}>
                 <button onClick={onClose} type="button" className="popup__close"></button>
                 <h2 className="popup__title">{title}</h2>
                 {props.children}
-                <button type="submit" className="popup__save popup__button-loading">{buttonText}</button>
+                <button type="submit" className="popup__save popup__button-loading">{isLoading ? `Сохранение...` : buttonText}</button>
             </form>
         </div>
     );
